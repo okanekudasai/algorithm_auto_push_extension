@@ -1,6 +1,6 @@
 // 문제 : 책 페이지
-// 결과 :  / 속도: 144 / 메모리 : 15868
-// 제출시각 : 24-01-11  20:41:30
+// 결과 :  / 속도: 144 / 메모리 : 16252
+// 제출시각 : 24-01-11  20:42:38
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
