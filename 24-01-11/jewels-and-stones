@@ -1,3 +1,16 @@
 // 문제 : jewels-and-stones
-// 결과 : Accepted / 속도: 34ms / 메모리 : 17.16MB
-// 제출시각 : 24-01-11  20:46:1
+// 결과 : Accepted / 속도: 26ms / 메모리 : 17.07MB
+// 제출시각 : 24-01-11  20:49:5
+class Solution:
+
+    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+
+        count = 0
+
+        for s in stones:
+
+            if s in jewels:
+
+                count += 1
+
+        return count
