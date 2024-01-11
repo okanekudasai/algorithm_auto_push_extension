@@ -1,0 +1,11 @@
+// 문제 : A-B
+// 결과 :  / 속도: 216 / 메모리 : 17724
+// 제출시각 : 24-01-11  20:23:22
+import java.util.Scanner;
+​
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println(sc.nextInt() - sc.nextInt());
+    }
+}
