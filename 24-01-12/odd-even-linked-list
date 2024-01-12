@@ -1,9 +1,11 @@
 // 문제 : odd-even-linked-list
-// 결과 : Accepted / 속도: 45ms / 메모리 : 19.25MB
-// 제출시각 : 24-01-12  11:58:43
+// 결과 : Accepted / 속도: 31ms / 메모리 : 19.39MB
+// 제출시각 : 24-01-12  12:28:4
 class Solution:
 
     def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+
+        # 아무것도 들어오지 않았을 때
 
         if head is None:
 
@@ -19,22 +21,20 @@ class Solution:
 
 
 
+        # 짝수번째도 있고 그 다음 홀수번째도 있을 때
+
         while even and even.next:
 
-            odd.next = odd.next.next
+            # 2개씩 건너서 연결
 
-            even.next = even.next.next
+            odd.next, even.next = odd.next.next, even.next.next
+
+            odd, even = odd.next, even.next
 
 
 
-            odd = odd.next
-
-            even = even.next
-
-        
+        # 홀수 리스트 뒤에 짝수 리스트 붙임
 
         odd.next = even_head
-
-
 
         return head
