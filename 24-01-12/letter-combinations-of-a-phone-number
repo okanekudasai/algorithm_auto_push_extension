@@ -1,3 +1,56 @@
 // 문제 : letter-combinations-of-a-phone-number
-// 결과 : Accepted / 속도: 43ms / 메모리 : 17.34MB
-// 제출시각 : 24-01-12  12:5:20
+// 결과 : Accepted / 속도: 36ms / 메모리 : 17.38MB
+// 제출시각 : 24-01-12  12:12:36
+class Solution:
+
+    def letterCombinations(self, digits: str) -> List[str]:
+
+        if digits is None or len(digits) == 0:
+
+            return []
+
+        digit_dict = {
+
+            '2': 'abc',
+
+            '3': 'def',
+
+            '4': 'ghi',
+
+            '5': 'jkl',
+
+            '6': 'mno',
+
+            '7': 'pqrs',
+
+            '8': 'tuv',
+
+            '9': 'wxyz',
+
+        }
+
+        answer = []
+
+
+
+        def dfs(L: int, strs:str) -> None:
+
+            if L == len(digits):
+
+                answer.append(strs)
+
+                return
+
+            for c in digit_dict[digits[L]]:
+
+                dfs(L + 1, strs + c)
+
+
+
+
+
+        dfs(0, '')
+
+
+
+        return answer
