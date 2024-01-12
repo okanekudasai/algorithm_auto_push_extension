@@ -1,0 +1,41 @@
+// 문제 : 연속된 부분 수열의 합
+// 결과 :  / 속도: 0 / 메모리 : 0
+// 제출시각 : 24-01-13  6:38:57
+import java.util.*;
+​
+class Solution {
+    public int[] solution(int[] sequence, int k) {
+        int [] new_sequence = new int [sequence.length + 1];
+        int s = 0;
+        for (int i = 0; i < sequence.length; i++) {
+            s += sequence[i];
+            new_sequence[i + 1] = s;
+        }
+        // System.out.println(Arrays.toString(new_sequence));
+        
+        int left = 0;
+        int right = 1;
+        
+        int answer_left = -10000000;
+        int answer_right = -1;
+        
+        while(true) {
+            if (new_sequence[right] - new_sequence[left] > k) {
+                left++;
+            } else if (new_sequence[right] - new_sequence[left] < k) {
+                if (right + 1 >= new_sequence.length) left++;
+                else right++;
+            } else {
+                if (answer_right - answer_left + 1 > right - left) {
+                    answer_left = left;
+                    answer_right = right - 1;
+                    // System.out.println(answer_left + " ~ " + answer_right);
+                }
+                left++;
+            }
+            if (left >= new_sequence.length - 1) break;
+        }
+        return new int[] {answer_left, answer_right};
+    }
+}
+​
