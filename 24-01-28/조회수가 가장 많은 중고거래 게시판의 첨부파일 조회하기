@@ -1,11 +1,11 @@
 // 문제 : 조회수가 가장 많은 중고거래 게시판의 첨부파일 조회하기
 // 결과 :  / 속도: 0 / 메모리 : 0
-// 제출시각 : 24-01-28  7:5:2
-
+// 제출시각 : 24-01-28  20:53:57
+# 가장 조회수가 높은 BOARD_ID
 # select BOARD_ID from USED_GOODS_BOARD
 # order by VIEWS desc limit 1
 ​
-# 가장 조회수가 높은 BOARD_ID 와 BOARD_ID가 같은 두 테이블의 조인 테이블
+
 # select CONCAT("/home/grep/src/", a.BOARD_ID, "/", b.FILE_ID, b.FILE_NAME, b.FILE_EXT) from USED_GOODS_BOARD a
 # join USED_GOODS_FILE b on a.BOARD_ID = b.BOARD_ID
 # where a.BOARD_ID = (select BOARD_ID from USED_GOODS_BOARD order by VIEWS desc limit 1)
