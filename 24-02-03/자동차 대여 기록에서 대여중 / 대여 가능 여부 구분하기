@@ -1,0 +1,21 @@
+// 문제 : 자동차 대여 기록에서 대여중 / 대여 가능 여부 구분하기
+// 결과 :  / 속도: 0 / 메모리 : 0
+// 제출시각 : 24-02-03  10:50:13
+# select CAR_ID,
+# (case
+#  when START_DATE < '2022-10-16' and '2022-10-16' <= END_DATE then '대여중'
+#  else '대여 가능'
+# end) as 'AVILABILITY'
+# from CAR_RENTAL_COMPANY_RENTAL_HISTORY;
+​
+select distinct(a.CAR_ID),
+(case
+
+ else '대여 가능'
+end) as 'AVILABILITY'
+​
+from CAR_RENTAL_COMPANY_RENTAL_HISTORY a
+​
+order by a.CAR_ID desc;
+# select distinct(CAR_ID) from CAR_RENTAL_COMPANY_RENTAL_HISTORY where START_DATE <= '2022-10-16' and '2022-10-16' <= END_DATE
+# order by car_id desc
