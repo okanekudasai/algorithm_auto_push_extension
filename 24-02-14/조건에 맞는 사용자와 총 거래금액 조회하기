@@ -1,0 +1,10 @@
+// 문제 : 조건에 맞는 사용자와 총 거래금액 조회하기
+// 결과 :  / 속도: 0 / 메모리 : 0
+// 제출시각 : 24-02-14  17:35:39
+
+from USED_GOODS_BOARD a
+join USED_GOODS_USER b on a.WRITER_ID = b.USER_ID
+where a.STATUS = 'DONE'
+group by b.USER_ID
+having TOTAL_SALES >= 700000
+order by TOTAL_SALES
