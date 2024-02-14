@@ -1,0 +1,8 @@
+// 문제 : 12세 이하인 여자 환자 목록 출력하기
+// 결과 :  / 속도: 0 / 메모리 : 0
+// 제출시각 : 24-02-14  17:23:51
+-- 코드를 입력하세요
+select PT_NAME, PT_NO, GEND_CD, AGE, IFNULL(TLNO, "NONE") as TLNO
+from PATIENT
+
+order by AGE desc, PT_NAME 
