@@ -1,0 +1,18 @@
+// 문제 : 저자 별 카테고리 별 매출액 집계하기
+// 결과 :  / 속도: 0 / 메모리 : 0
+// 제출시각 : 24-02-14  19:31:36
+# 어서 테이블을 조인하여 어서 아이디에 맞는 어서 네임을 필드에 추가합니다.
+
+from (
+    # 북 테이블에서 카테고리와 작가아이디, 가격을 가져오고 가격 * 판매량합게를 새로운 필드로 추가합니다.
+    select aa.CATEGORY, aa.AUTHOR_ID, (aa.PRICE * bb.SUM_SALES) as PRICE from BOOK aa
+    join (
+        # 북세일 테이블에서 판매일이 1월인 레코드만 뽑아서 북아이디 별로 판매량의 합계를 구합니다.
+        select BOOK_ID, sum(SALES) as SUM_SALES from BOOK_SALES
+        where DATE_FORMAT(SALES_DATE, "%Y-%m") = '2022-01'
+        group by BOOK_ID
+    ) bb on aa.BOOK_ID = bb.BOOK_ID
+) a
+join AUTHOR b on a.AUTHOR_ID = b.AUTHOR_ID
+group by a.AUTHOR_ID, a.CATEGORY
+order by AUTHOR_ID, CATEGORY desc
