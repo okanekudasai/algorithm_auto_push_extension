@@ -1,0 +1,11 @@
+// 문제 : 상품 별 오프라인 매출 구하기
+// 결과 :  / 속도: 0 / 메모리 : 0
+// 제출시각 : 24-02-14  19:46:53
+select a.PRODUCT_CODE, (a.PRICE * b.SUM_SALES_AMOUNT) as SALES
+from PRODUCT a
+join (
+    select PRODUCT_ID, sum(SALES_AMOUNT) as SUM_SALES_AMOUNT
+    from OFFLINE_SALE
+    group by PRODUCT_ID
+) b on a.PRODUCT_ID = b.PRODUCT_ID
+
