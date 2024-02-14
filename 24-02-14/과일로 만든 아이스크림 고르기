@@ -1,0 +1,9 @@
+// 문제 : 과일로 만든 아이스크림 고르기
+// 결과 :  / 속도: 0 / 메모리 : 0
+// 제출시각 : 24-02-14  20:30:24
+-- 코드를 입력하세요
+
+from FIRST_HALF a
+join ICECREAM_INFO b on a.FLAVOR = b.FLAVOR
+where a.TOTAL_ORDER > 3000 and b.INGREDIENT_TYPE = 'fruit_based'
+order by a.TOTAL_ORDER desc
