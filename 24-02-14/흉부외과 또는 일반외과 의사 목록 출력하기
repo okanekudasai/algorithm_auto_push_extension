@@ -1,0 +1,9 @@
+// 문제 : 흉부외과 또는 일반외과 의사 목록 출력하기
+// 결과 :  / 속도: 0 / 메모리 : 0
+// 제출시각 : 24-02-14  20:10:28
+-- 코드를 입력하세요
+​
+
+from DOCTOR
+where MCDP_CD = 'GS' or MCDP_CD = 'CS'
+order by HIRE_YMD desc, DR_NAME
