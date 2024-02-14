@@ -1,0 +1,7 @@
+// 문제 : 경기도에 위치한 식품창고 목록 출력하기
+// 결과 :  / 속도: 0 / 메모리 : 0
+// 제출시각 : 24-02-14  17:41:53
+-- 코드를 입력하세요
+select WAREHOUSE_ID, WAREHOUSE_NAME, ADDRESS, IFNULL(FREEZER_YN, 'N') as FREEZER_YN
+from FOOD_WAREHOUSE
+
