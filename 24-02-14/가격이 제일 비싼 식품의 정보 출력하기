@@ -1,0 +1,10 @@
+// 문제 : 가격이 제일 비싼 식품의 정보 출력하기
+// 결과 :  / 속도: 0 / 메모리 : 0
+// 제출시각 : 24-02-14  17:27:29
+-- 코드를 입력하세요
+select PRODUCT_ID, PRODUCT_NAME, PRODUCT_CD, CATEGORY, PRICE
+from FOOD_PRODUCT
+where PRICE = (
+
+)
+​
