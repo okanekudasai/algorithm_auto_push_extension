@@ -1,0 +1,14 @@
+// 문제 : 보호소에서 중성화한 동물
+// 결과 :  / 속도: 0 / 메모리 : 0
+// 제출시각 : 24-02-21  10:40:5
+-- 코드를 입력하세요
+# SELECT A.ANIMAL_ID, A.ANIMAL_TYPE, A.NAME
+# FROM ANIMAL_INS A INNER JOIN ANIMAL_OUTS B
+# ON A.ANIMAL_ID = B.ANIMAL_ID
+# WHERE A.SEX_UPON_INTAKE != B.SEX_UPON_OUTCOME
+​
+select a.ANIMAL_ID, a.ANIMAL_TYPE, a.NAME
+from ANIMAL_INS a
+join ANIMAL_OUTS b on a.ANIMAL_ID = b.ANIMAL_ID
+where a.SEX_UPON_INTAKE != b.SEX_UPON_OUTCOME
+
