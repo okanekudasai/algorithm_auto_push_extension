@@ -1,0 +1,11 @@
+// 문제 : 카테고리 별 상품 개수 구하기
+// 결과 :  / 속도: 0 / 메모리 : 0
+// 제출시각 : 24-02-29  4:51:31
+-- 코드를 입력하세요
+select CATEGORY, count(CATEGORY) as PRODUCTS
+from (
+    SELECT SUBSTRING(PRODUCT_CODE, 1, 2) as CATEGORY
+    from PRODUCT
+) a
+group by CATEGORY
+
