@@ -1,6 +1,6 @@
 // 문제 : 주사위
-// 결과 :  / 속도: 120 / 메모리 : 14336
-// 제출시각 : 24-02-29  3:53:22
+// 결과 :  / 속도: 124 / 메모리 : 14228
+// 제출시각 : 24-02-29  3:54:43
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
